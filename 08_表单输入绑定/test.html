@@ -35,12 +35,12 @@
     <label for="pingpang">乒乓</label><br>
 
     <span>城市: </span>
-    <select>
+    <select v-model="cityId">
       <option value="">未选择</option>
-
+      <option :value="city.id" v-for="(city, index) in allCitys" :key="index">{{city.name}}</option>
     </select><br>
     <span>介绍: </span>
-    <textarea rows="10" ></textarea><br><br>
+    <textarea rows="10" v-model="desc"></textarea><br><br>
 
     <input type="submit" value="注册">
   </form>
@@ -54,11 +54,14 @@
       username: '',
       pwd: '',
       sex: '女',
-      likes: ['foot']
+      likes: ['foot'],
+      allCitys: [{id: 1, name: '北京'}, {id: 2, name: '邯郸'}, {id: 3, name: '长沙'}],
+      cityId: 3,
+      desc: ''
     },
     methods: {
       handleSubmit () {
-        console.log(this.username, this.pwd)
+        console.log(this.username, this.pwd, this.sex, this.likes, this.cityId, this.desc)
       }
     }
   })

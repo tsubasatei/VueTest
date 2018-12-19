@@ -24,8 +24,8 @@
 -->
 
 <div id="test">
-  <button @click="destroyVue">destory vue</button>
-  <p v-if="isShow">尚硅谷IT教育</p>
+  <button @click="destoryVM">destroy vm</button>
+  <p v-show="isShow">尚硅谷IT教育</p>
 </div>
 
 <script type="text/javascript" src="../js/vue.js"></script>
@@ -35,28 +35,23 @@
     data: {
       isShow: true
     },
-
-    mounted () {
-      // 执行异步任务
+    mounted() { // 初始化显示之后立即调用(1次)
       this.intervalId = setInterval(() => {
         console.log('-----')
         this.isShow = !this.isShow
       }, 1000)
     },
-
-    beforeDestroy() {
-      console.log('beforeDestroy()')
-      // 执行收尾的工作
+    beforeDestroy() { // 死亡之前调用(1次)
+      // 清除定时器
       clearInterval(this.intervalId)
     },
-
     methods: {
-      destroyVue () {
+      destoryVM() {
+        // 干掉vm
         this.$destroy()
       }
     }
   })
-
 
 </script>
 </body>
