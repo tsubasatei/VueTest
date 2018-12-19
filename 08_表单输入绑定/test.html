@@ -13,7 +13,7 @@
   select
 -->
 <div id="demo">
-  <form action="/xxx" @submit.prevent="handleSubmit">
+  <form action="/XXX" @submit.prevent="handleSubmit">
     <span>用户名: </span>
     <input type="text" v-model="username"><br>
 
@@ -21,9 +21,9 @@
     <input type="password" v-model="pwd"><br>
 
     <span>性别: </span>
-    <input type="radio" id="female" value="女" v-model="sex">
+    <input type="radio" id="female" value='女' v-model="sex">
     <label for="female">女</label>
-    <input type="radio" id="male" value="男" v-model="sex">
+    <input type="radio" id="male" value='男' v-model="sex">
     <label for="male">男</label><br>
 
     <span>爱好: </span>
@@ -35,12 +35,12 @@
     <label for="pingpang">乒乓</label><br>
 
     <span>城市: </span>
-    <select v-model="cityId">
+    <select>
       <option value="">未选择</option>
-      <option :value="city.id" v-for="(city, index) in allCitys" :key="city.id">{{city.name}}</option>
+
     </select><br>
     <span>介绍: </span>
-    <textarea rows="10" v-model="info"></textarea><br><br>
+    <textarea rows="10" ></textarea><br><br>
 
     <input type="submit" value="注册">
   </form>
@@ -53,16 +53,12 @@
     data: {
       username: '',
       pwd: '',
-      sex: '男',
-      likes: ['foot'],
-      allCitys: [{id: 1, name: 'BJ'}, {id: 2, name: 'SS'}, {id: 3, name: 'SZ'}],
-      cityId: '2',
-      info: ''
+      sex: '女',
+      likes: ['foot']
     },
     methods: {
       handleSubmit () {
-        console.log(this.username, this.pwd, this.sex, this.likes, this.cityId, this.info)
-        alert('提交注册的ajax请求')
+        console.log(this.username, this.pwd)
       }
     }
   })

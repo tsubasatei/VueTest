@@ -8,31 +8,31 @@
 <!--
 1. 条件渲染指令
   v-if
-  v-else
-  v-show
+  v-else （标签移除）
+
+  v-show  （通过style控制显示  style="display: none;"）
 2. 比较v-if与v-show
   如果需要频繁切换 v-show 较好
 -->
 
 <div id="demo">
-  <p v-if="ok">表白成功</p>
-  <p v-else>表白失败</p>
+  <p v-if="ok">成功了</p>
+  <p v-else>失败了</p>
 
-  <hr>
-  <p v-show="ok">求婚成功</p>
-  <p v-show="!ok">求婚失败</p>
+  <p v-show="ok">表白成功</p>
+  <p v-show="!ok">表白失败</p>
 
   <button @click="ok=!ok">切换</button>
 </div>
 
-<script type="text/javascript" src="../js/vue.js"></script>
-<script type="text/javascript">
-  new Vue({
-    el: '#demo',
-    data: {
-      ok: true,
-    }
-  })
+<script src="../js/vue.js"></script>
+<script>
+    new Vue({
+      el: '#demo',
+      data: {
+        ok: false
+      }
+    })
 </script>
 </body>
 </html>
