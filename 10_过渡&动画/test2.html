@@ -5,10 +5,10 @@
   <title>10_过渡&动画2</title>
   <style>
     .bounce-enter-active {
-      animation: bounce-in .5s;
+      animation: bounce-in 1s;
     }
     .bounce-leave-active {
-      animation: bounce-in .5s reverse;
+      animation: bounce-in 1s reverse;
     }
     @keyframes bounce-in {
       0% {
@@ -21,15 +21,16 @@
         transform: scale(1);
       }
     }
+
   </style>
 </head>
 <body>
 
 <div id="example-2">
-  <button @click="show = !show">Toggle show</button>
+  <button @click="show=!show">Toggle Show</button>
   <br>
   <transition name="bounce">
-    <p v-if="show" style="display: inline-block">Lorem</p>
+    <p v-show="show" style="display: inline-block">足球小子大空翼</p>
   </transition>
 </div>
 

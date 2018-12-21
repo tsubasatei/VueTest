@@ -4,27 +4,26 @@
   <meta charset="UTF-8">
   <title>10_过渡&动画1</title>
   <style>
-    /*指定过渡样式*/
-    .xxx-enter-active, .xxx-leave-active {
+    /*显示/隐藏的过渡效果*/
+    .fade-enter-active, .fade-leave-active {
       transition: opacity 1s
     }
-    /*指定隐藏时的样式*/
-    .xxx-enter, .xxx-leave-to {
+    /*隐藏时的样式*/
+    .fade-enter, .fade-leave-to {
       opacity: 0;
     }
-
-
+    /*显示的过渡效果*/
     .move-enter-active {
       transition: all 1s
     }
-
+    /*隐藏的过渡效果*/
     .move-leave-active {
-      transition: all 3s
+      transition: all 3s;
     }
-
+    /*隐藏时的样式*/
     .move-enter, .move-leave-to {
       opacity: 0;
-      transform: translateX(20px)
+      transform: translateX(20px);
     }
   </style>
 </head>
@@ -46,35 +45,34 @@
 
 
 
-<div id="demo">
-  <button @click="show = !show">Toggle</button>
-  <transition name="xxx">
-    <p v-show="show">hello</p>
+<div id="test">
+  <button @click="isShow=!isShow">toggle</button>
+  <transition name="fade">
+    <p v-show="isShow">Hello</p>
   </transition>
 </div>
-
-<hr>
-<div id="demo2">
-  <button @click="show = !show">Toggle2</button>
+<div id="test2">
+  <button @click="isShow=!isShow">toggle</button>
   <transition name="move">
-    <p v-show="show">hello</p>
+    <p v-show="isShow">toggle</p>
   </transition>
+
 </div>
 
 
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
   new Vue({
-    el: '#demo',
+    el: '#test',
     data: {
-      show: true
+      isShow: true
     }
   })
 
   new Vue({
-    el: '#demo2',
+    el: '#test2',
     data: {
-      show: true
+      isShow: true
     }
   })
 
