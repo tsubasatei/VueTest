@@ -31,7 +31,7 @@
         orderType: 0, // 排序类型， 0代表原本顺序， 1升序， 2降序
         persons: [
           {name: 'Naruto', age: 16},
-          {name: 'Sakura', age: 17},
+          {name: 'Sakura', age: 18},
           {name: 'Sasuke', age: 17},
           {name: 'Sasori', age: 30}
         ]
@@ -48,12 +48,12 @@
 
           // 排序
           if(orderType !== 0) {
-              persons.sort(function (p1, p2) { // 如果返回负数p1在前，返回正数p2在前
+              fPersons.sort(function (p1, p2) { // 如果返回负数p1在前，返回正数p2在前
                 // 1升序， 2降序
                 if(orderType === 1) {
-                  return p2.age - p1.age;
-                } else if(orderType === 2) {
                   return p1.age - p2.age;
+                } else if(orderType === 2) {
+                  return p2.age - p1.age;
                 }
               })
           }

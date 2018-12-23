@@ -34,6 +34,7 @@
   </div>
   <a href="http://www.baidu.com" @click.prevent="test7">去百度</a>
   <h2>3. 按键修饰符</h2>
+  <input type="text" @keyup="test9">
   <input type="text" @keyup.13="test8">
   <input type="text" @keyup.enter="test8">
 </div>
@@ -96,7 +97,7 @@
         alert('inner')
       },
       test7() {
-        // event.preventDefault()    //  组织事件的默认行为
+        // event.preventDefault()    //  阻止事件的默认行为
         alert('点击了')
       },
       /*test8(event) {
@@ -106,6 +107,9 @@
       }*/
       test8() {
         alert(event.target.value)
+      },
+      test9() {
+        alert(event.keyCode+'---'+event.target.value)
       }
     }
   })

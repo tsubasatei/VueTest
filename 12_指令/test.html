@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <title>12_指令_内置指令</title>
   <style>
-    [v-cloak] { display: none }
+    [v-clock] {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -25,14 +27,17 @@
 <div id="example">
   <p ref="content">tsubasa</p>
   <button @click="hint">提示</button>
+  <!--<p v-text="msg"></p>-->
+  <p v-cloak>{{msg}}</p>
 </div>
 
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
+  alert('---')
   new Vue({
     el: '#example',
     data: {
-
+      msg: '尚硅谷'
     },
     methods: {
       hint() {

@@ -10,22 +10,19 @@
   <p v-my-directive="msg"></p>
 </div>
 
-<script type="text/javascript" src="../js/vue.js"></script>
-<script type="text/javascript" src="vue-myPlugin.js"></script>
-<script type="text/javascript">
-  // 声明使用插件(安装插件: 调用插件的install())
-  Vue.use(MyPlugin) // 内部会调用插件对象的install()
-
+<script src="../js/vue.js"></script>
+<script src="./vue-myPlugin2.js"></script>
+<script>
+  // 生命使用插件
+  Vue.use(MyPlugin2)  //内部会执行MyPlugin2.install(Vue)
+  Vue.myGlobalMethod()
   const vm = new Vue({
     el: '#test',
     data: {
-      msg: 'HaHa'
+      msg: 'I do not love You any more'
     }
   })
-  Vue.myGlobalMethod()
   vm.$myMethod()
-
-  new Object()
 </script>
 </body>
 </html>
